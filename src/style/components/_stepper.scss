@@ -1,0 +1,30 @@
+.stepper {
+    @include flex(15px, center, center);
+    flex: 1;
+
+    div {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $disabled;
+        transition: all 0.3s ease;
+
+        &.past {
+            background-color: $cta;
+        }
+
+        &.current {
+            border: 2px solid $cta;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .stepper {
+        gap: 8px;
+        div {
+            width: 10px;
+            height: 10px;
+        }
+    }
+}

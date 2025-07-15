@@ -1,0 +1,120 @@
+.wizard-wrapper {
+    width: 100%;
+    max-width: 700px;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+        color: $text-important;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .wizard {
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        background-color: $background-light;
+        @include flex(0, center, center, column);
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: $text;
+            margin-bottom: 20px;
+        }
+
+        .error {
+            text-align: left;
+            color: $error;
+            height: 1rem;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .error-input {
+            border: 2px solid $error;
+            box-shadow: 0 0 2px 0 $error;
+        }
+
+        .valid-input {
+            border: 2px solid $cta;
+            box-shadow: 0 0 2px 0 $cta;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    }
+
+    .wizard-buttons {
+        @include flex(0, space-between, center);
+        width: 100%;
+
+
+        button {
+            font-size: 1.2rem;
+            width: 160px;
+            height: 40px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .active {
+            background-color: $cta;
+            color: $text-light;
+        }
+
+        .back {
+            border: 1px solid $disabled;
+            color: $text;
+        }
+
+        .empty-button {
+            width: 160px;
+            height: 40px;
+        }
+
+        .disabled {
+            background-color: $disabled;
+            color: $text-light;
+            cursor: unset;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .wizard-wrapper {
+        .wizard {
+            padding: 10px;
+        }
+
+        .wizard-buttons {
+            button {
+                width: 100px;
+                height: 30px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

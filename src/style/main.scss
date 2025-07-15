@@ -1,0 +1,24 @@
+// basics
+@import "/src/style/base/variables";
+@import "/src/style/base/mixins";
+@import "/src/style/base/globals";
+@import "/src/style/base/fonts";
+@import "/src/style/base/animations";
+
+//components
+@import "/src/style/components/wizard";
+@import "/src/style/components/stepper";
+
+
+body {
+  background-color: $background;
+  color: $text;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.main-layout{
+  @include flex(0, center, center, column);
+  min-height: 100vh;
+  padding: 10px;
+}
