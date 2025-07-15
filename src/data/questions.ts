@@ -4,21 +4,21 @@ import type { Question } from '../types/question'
 export const questions: Question[] = [
     {
         id: 'full-name',
-        title: 'Full Name',
+        title: 'Full name',
         text: 'Please enter your first and last name.',
         validation: { type: 'min-length', value: 5 },
         placeholder: 'Omer Cohen',
     },
     {
         id: 'email',
-        title: 'Email Address',
+        title: 'Email address',
         text: 'We will use this to send you updates and important information.',
         validation: { type: 'email' },
         placeholder: 'omer@gmail.com',
     },
     {
         id: 'phone-yes-no',
-        title: 'Add phone number',
+        title: 'Add phone number?',
         text: 'Would you like us to contact you via phone number? (type yes or no)',
         validation: { type: 'phone-yes-no' },
         placeholder: 'Yes'

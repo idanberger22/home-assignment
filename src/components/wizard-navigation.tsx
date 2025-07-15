@@ -1,4 +1,4 @@
-import Stepper from './Stepper'
+import Stepper from './stepper'
 import { questions } from '../data/questions'
 type WizardNavigationProps = {
     step: number,
