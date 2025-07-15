@@ -11,8 +11,8 @@ This project is a home assignment implementing a **multi-step wizard form** comp
 - **TypeScript**
 - **Vite** (build tool)
 - **SCSS** (styling)
-- **React Hook Form** or custom form handling
-- **Yup / Zod** (optional: for validation schema)
+- **Formik** (form handling)
+- **Yup** (validation schema)
 
 ## 🚀 Getting Started
 
