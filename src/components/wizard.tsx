@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import { useFormik } from 'formik'
 import { validationSchema } from '../data/validation'
 import { questions } from '../data/questions'
-import Stepper from './Stepper'
+import WizardNavigation from './wizard-navigation'
 const initialValues = questions.reduce((acc, q) => ({ ...acc, [q.id]: '' }), {} as Record<string, string>)
 
 export default function Wizard() {
@@ -27,8 +27,8 @@ export default function Wizard() {
         inputRef.current?.focus()
     }, [step])
 
-    const handleNext = (e: React.FormEvent) => {
-        e.preventDefault()
+    const handleNext = (e?: React.FormEvent) => {
+        e?.preventDefault()
         formik.setFieldTouched(currentQuestion.id, true)
         if (formik.errors[currentQuestion.id]) return
 
@@ -65,7 +65,7 @@ export default function Wizard() {
     const isNextButtonDisabled = step === questions.length - 1 ? !formik.isValid : !!error
 
     if (isSubmitted) return <section className='wizard-wrapper'>
-        <h1>Thank you for your submission!</h1>
+        <h1 className='fade-down'>Thank you for your submission!</h1>
     </section>
 
     return <section className='wizard-wrapper fade-down'>
@@ -93,28 +93,11 @@ export default function Wizard() {
             </p>
         </form>
 
-        <div className='wizard-buttons'>
-            {step > 0 ?
-                <button
-                    className='back elevate'
-                    onClick={handleBack}
-                    type='button'>
-                    Back
-                </button>
-                :
-                <div className='empty-button' />
-            }
-
-            <Stepper step={step} total={questions.length} />
-
-            <button
-                className={isNextButtonDisabled ? 'disabled' : 'elevate active'}
-                onClick={handleNext}
-                disabled={isNextButtonDisabled}
-                type='button'
-            >
-                {step < questions.length - 1 ? 'Next' : 'Done'}
-            </button>
-        </div>
+        <WizardNavigation
+            step={step}
+            handleBack={handleBack}
+            handleNext={handleNext}
+            isNextButtonDisabled={isNextButtonDisabled}
+        />
     </section>
 }
