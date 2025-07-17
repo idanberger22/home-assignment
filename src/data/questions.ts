@@ -20,7 +20,7 @@ export const questions: Question[] = [
         id: 'phone-yes-no',
         title: 'Add phone number?',
         text: 'Would you like us to contact you via phone number? (type yes or no)',
-        validation: { type: 'phone-yes-no' },
+        validation: { type: 'yes-no' },
         placeholder: 'Yes'
     },
     {

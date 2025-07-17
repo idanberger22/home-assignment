@@ -3,7 +3,7 @@ export type ValidationRule =
     | { type: 'non-empty' }
     | { type: 'email' }
     | { type: 'min-length'; value: number }
-    | { type: 'phone-yes-no' }
+    | { type: 'yes-no' }
     | { type: 'phone' }
 
 export type Skip = {
@@ -12,7 +12,7 @@ export type Skip = {
     skipToId: string,
 }
 
-export interface Question {
+export type Question = {
     id: string;
     title: string;
     text: string;

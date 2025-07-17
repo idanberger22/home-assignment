@@ -16,8 +16,8 @@ export const validationSchema = Yup.object(
                     .min(q.validation.value, `${q.title} must be at least ${q.validation.value} characters`)
                     .required(`${q.title} is required`)
                 break
-            case 'phone-yes-no':
-                acc[q.id] = Yup.string().oneOf(['yes', 'no'], 'Please answer yes or no')
+            case 'yes-no':
+                acc[q.id] = Yup.string().oneOf(['yes', 'no'], 'Please answer yes or no').required('Please answer yes or no')
                 break
             case 'phone':
                 acc[q.id] = Yup.string()
